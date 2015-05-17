@@ -136,6 +136,7 @@ struct Options {
   const FilterPolicy* filter_policy;
 
   // Create an Options object with default values for all fields.
+  // see details in util/options.cc
   Options();
 };
 

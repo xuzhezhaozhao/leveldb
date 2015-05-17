@@ -7,3 +7,10 @@ build_config.mk
 *_test
 db_bench
 leveldbutil
+*.pyc
+a.out
+*.swp
+*.swo
+test
+test.cpp
+testdb/

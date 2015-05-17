@@ -48,6 +48,7 @@ class DB {
   // OK on success.
   // Stores NULL in *dbptr and returns a non-OK status on error.
   // Caller should delete *dbptr when it is no longer needed.
+  // see db/db_impl.cc for details
   static Status Open(const Options& options,
                      const std::string& name,
                      DB** dbptr);
@@ -148,12 +149,14 @@ class DB {
 
 // Destroy the contents of the specified database.
 // Be very careful using this method.
+// see db/db_impl.cc for details
 Status DestroyDB(const std::string& name, const Options& options);
 
 // If a DB cannot be opened, you may attempt to call this method to
 // resurrect as much of the contents of the database as possible.
 // Some data may be lost, so be careful when calling this function
 // on a database that contains important information.
+// see db/repair.cc for details
 Status RepairDB(const std::string& dbname, const Options& options);
 
 }  // namespace leveldb
